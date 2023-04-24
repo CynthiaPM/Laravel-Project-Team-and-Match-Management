@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class game extends Model
 {
     use HasFactory;
-
+    protected $guarded = [];
     //relation one to many (inverse)
 
     public function team(){

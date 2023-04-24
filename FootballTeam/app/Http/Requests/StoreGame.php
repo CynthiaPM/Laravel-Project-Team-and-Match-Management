@@ -11,7 +11,7 @@ class StoreGame extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,9 @@ class StoreGame extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'other_team'=>'required',
+            'city' => 'required',
+            'status' => 'required'
         ];
     }
 }
