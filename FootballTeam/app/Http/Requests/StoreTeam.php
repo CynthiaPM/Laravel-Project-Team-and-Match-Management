@@ -23,9 +23,22 @@ class StoreTeam extends FormRequest
     {
         return [
             'name' => 'required|max:10'
-            // ,
-            // 'description' => 'required',
+            ,'bio' => 'required'
             // 'categoria' => 'required'
+        ];
+    }
+    //para cambiar los atributos de los campos de validacion
+    public function attributes()
+    {
+        return[
+            'name' => 'nombre del equipo'
+        ];
+    }
+    //aqui se personalizan los mensajes de error en especifico
+    public function messages()
+    {
+        return [
+            'bio.required' => 'mensaje de error personalizado'
         ];
     }
 }

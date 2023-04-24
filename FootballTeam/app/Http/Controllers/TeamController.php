@@ -33,7 +33,6 @@ class TeamController extends Controller
     public function store(StoreTeam $request){
 
        
-
         // $curso = new Curso();
 
         // $curso->name = $request->name;
@@ -50,11 +49,11 @@ class TeamController extends Controller
 
     public function update(Request $request, Team $team){
 
-        $request->validate([
-            'name' => 'required',
-            'description' => 'required',
-            'categoria' => 'required'
-        ]); 
+        // $request->validate([
+        //     'name' => 'required',
+        //     'description' => 'required',
+        //     'categoria' => 'required'
+        // ]); 
 
     //    $curso->name= $request->name;
     //    $curso->description= $request->description;
