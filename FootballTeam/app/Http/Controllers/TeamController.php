@@ -7,7 +7,7 @@ use App\Http\Requests\StoreTeam;
 
 class TeamController extends Controller
 {
-    public function index(){
+    public function index(){        
 
         $teams = Team::orderBy('id','desc')->paginate();
 
