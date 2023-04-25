@@ -14,8 +14,14 @@
         }
     </style>
 </head>
-<body>
+<body class="flex flex-col min-h-screen">
     {{-- @include('layouts.partials.header') --}}
-    @yield('content')
+    <div class="flex-grow" >
+        @yield('content')
+    </div>
+    
 </body>
+<footer>
+    @extends('layouts.footer')
+</footer>
 </html>

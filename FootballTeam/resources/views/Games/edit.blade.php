@@ -24,9 +24,8 @@
     @enderror
     <br>
 
-    <label >team id
-        <input type="text" name="team_id">
-    </label>
+        <input type="hidden" name="team_id" value="{{$game->team_id}}">
+
     <br>
       
     <label >city

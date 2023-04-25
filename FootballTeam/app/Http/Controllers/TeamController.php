@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Team;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreTeam;
+use App\Models\game;
 
 class TeamController extends Controller
 {
@@ -20,8 +21,12 @@ class TeamController extends Controller
     }
 
     public function show(Team $team){
+        
+        $game= $team->Games()->get();
 
-    return view('teams.show', compact('team'));
+        
+
+    return view('teams.show', compact('team','game'));
 
     }
 
