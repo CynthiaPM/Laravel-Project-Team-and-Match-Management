@@ -9,7 +9,7 @@
 <form action="{{route('games.store')}}" method="POST">
 
     @csrf
-
+    
     <label>
         Nombre:
     <br>
@@ -23,10 +23,10 @@
     @enderror
     <br>
 
-    <label >team id
+    {{-- <label >team id
         <input type="text" name="team_id">
     </label>
-    <br>
+    <br> --}}
       
     <label >city
         <input type="text" name="city">
@@ -35,7 +35,9 @@
     <label>
         
         <select name="status">
-
+            {{-- @foreach ($game as $game)
+                <option value="{{$game->status}}">{{$game->status}}</option>
+            @endforeach --}}
         <option value="win">win</option>
         <option value="lose">lose</option>
         <option value="draw">draw</option>
@@ -47,6 +49,11 @@
       
     <label >fecha
         <input type="date" name="game_date">
+    </label>
+
+    <label>
+        <input type="hidden" name="team_id" value="
+        {{$team}}">
     </label>
 
       

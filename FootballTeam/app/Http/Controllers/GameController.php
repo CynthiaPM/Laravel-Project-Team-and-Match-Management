@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreGame;
 use Illuminate\Http\Request;
 use App\Models\Game;
+use App\Models\Team;
 
 class GameController extends Controller
 {
@@ -22,19 +23,24 @@ class GameController extends Controller
         return view ('games.show',compact('game'));
     }
 
-    public function create(){
-        return view('games.create');
+    public function create($team){        
+      
+        return view('games.create',compact('team'));
     }
 
     public function store(StoreGame $request){
-
+        
+        // $team= $request->input('id');
         $game = Game::create($request->all());
 
-        return redirect()->route('games.show',$game);
+        // $game = Game::create(array_merge($request->all(), ['team_id' => $team]));
+
+        return redirect()->route('teams.show',$game->team_id);
 
     }
 
     public function edit(Game $game){
+        
         return view('games.edit',compact('game'));
     }
 
@@ -42,14 +48,16 @@ class GameController extends Controller
 
         $game->update($request->all());
 
-        return redirect()->route('games.show',$game);
+        return redirect()->route('teams.show',$game->team_id);
 
     }
 
     public function destroy(Game $game){
 
+        $team_id = $game->team_id;
+
         $game->delete();
 
-        return redirect()->route('games.index');
+        return redirect()->route('teams.show',$team_id);
     }
 }

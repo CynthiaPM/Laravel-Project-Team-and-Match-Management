@@ -1,4 +1,5 @@
 @extends('layouts.plantilla')
+@extends('layouts.footer')
 
 @section('title','Teams')
 
