@@ -5,24 +5,39 @@
 
 @section('content')
 
-<h1>Bienvenido al equipo {{$team->name}}</h1>
+<h1 class="text-center text-2xl mt-20 font-bold">Welcome team {{$team->name}}</h1>
+<p class="text-center mt-2">´{{$team->bio}}</p>
 
-<a href="{{route('teams.index')}}">volver a todos los equipos</a>
-<br>
-<a href="{{route('teams.edit',$team)}}">editar equipo</a>
 
-<a href="{{route('games.create',$team)}}">crear partido </a>
 
-<form action="{{route('teams.destroy',$team)}}" method="POST">
-    @csrf
-    @method ('delete')
-    <button type="submit">eliminar</button>
-    
-</form>
+
+
+
+<div class="flex justify-center mt-16">
+    <a href="{{route('teams.index')}}"> <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mr-4">
+        Go back to Teams
+  </button></a>
+    <a href="{{route('games.create',$team->id)}}">
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mr-4">
+            Create Match
+      </button>      
+    </a>
+    <a href="{{route('teams.edit',$team)}}"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mr-4">
+        Edit Team
+  </button></a>
+    <form action="{{route('teams.destroy',$team)}}" method="POST">
+        @csrf
+        @method ('delete')
+        <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full" type="submit">eliminar</button>
+        
+    </form>
+    </div>
+
+
 
 <section class="container px-40 mx-auto"> 
     <div class="flex items-center gap-x-3">
-        <h2 class="text-lg font-medium text-gray-800 dark:text-white">Matches </h2>
+        <h2 class="text-lg font-medium text-gray-800 dark:text-white">Matches</h2>
     </div>   
 
     <div class="flex flex-col mt-6 ">
@@ -72,10 +87,14 @@
                                     </div>
                                 </td> 
                                 <td class="px-12 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
-                                    <div class="inline-flex items-center px-3 py-1 rounded-full gap-x-2 bg-emerald-100/60 dark:bg-gray-800">
-                                        <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+                                    <div class="inline-flex items-center px-3 py-1 ">
+                                    {{-- <div class="inline-flex items-center px-3 py-1 rounded-full gap-x-2 bg-emerald-100/60 dark:bg-gray-800"> --}}
 
-                                        <h2 class="text-sm font-normal text-emerald-500">{{$game->city}}</h2>
+                                        {{-- <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span> --}}
+                                        <span class="h-1.5 w-1.5 "></span>
+
+
+                                        <h2 class="text-sm font-normal">{{$game->city}}</h2>
                                     </div>
                                 </td>
                                 <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">{{ date('Y-m-d', strtotime($game->game_date)) }}</td>
@@ -112,7 +131,8 @@
         </div>
     </div>
 
-    <div class="flex items-center justify-between mt-6">
+    {{-- esto es el paginate --}}
+    {{-- <div class="flex items-center justify-between my-6 ">
         <a href="#" class="flex items-center px-5 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 bg-white border rounded-md gap-x-2 hover:bg-gray-100 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-800">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 rtl:-scale-x-100">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
@@ -142,7 +162,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
             </svg>
         </a>
-    </div>
+    </div> --}}
 </section>
 
 @endsection

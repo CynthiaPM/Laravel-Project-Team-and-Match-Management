@@ -31,6 +31,7 @@ class GameController extends Controller
     public function store(StoreGame $request){
         
         // $team= $request->input('id');
+        
         $game = Game::create($request->all());
 
         // $game = Game::create(array_merge($request->all(), ['team_id' => $team]));
