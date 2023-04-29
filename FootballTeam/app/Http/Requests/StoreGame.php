@@ -22,6 +22,7 @@ class StoreGame extends FormRequest
     public function rules(): array
     {
         return [
+
             'other_team'=>'required',
             'city' => 'required',
             'status' => 'required'

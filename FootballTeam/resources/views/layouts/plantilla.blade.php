@@ -6,22 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @vite('resources/css/app.css')
     <title>@yield('title')</title>
-
-    <style>
-        .active{
-            color: red;
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body class="flex flex-col min-h-screen">
-    {{-- @include('layouts.partials.header') --}}
-    <div class="flex-grow" >
-        @yield('content')
-    </div>
     
+</head>
+
+
+
+<body class="flex flex-col min-h-screen relative">
+
+
+    <header >
+       @include('layouts.header')
+    </header>
+    
+    
+    {{-- @include('layouts.partials.header') --}}
+    
+        <main class="flex-grow">@yield('content')</main>
+    
+        <footer>
+            @extends('layouts.footer')
+        </footer>
 </body>
-<footer>
-    @extends('layouts.footer')
-</footer>
+
 </html>
