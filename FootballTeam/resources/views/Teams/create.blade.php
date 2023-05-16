@@ -19,7 +19,7 @@
                 <label class="block text-sm font-medium text-gray-700">
                     Team name:                
                     <div class="mt-4">
-                        <input type="text" name="name" value="{{old('name')}}" class="border-0  border-b rounded-sm w-full h-10"></div>
+                        <input type="text" name="name" value="{{old('name')}}" class="border-0 font-light border-b rounded-sm w-full h-10"></div>
                 </label>
                 @error('name')
                 <small>{{$message}}</small>                
@@ -30,7 +30,7 @@
             <div class="block text-sm font-medium text-gray-700">
                 <label>Biography
                     <div class="mt-4">
-                        <textarea name="bio"  rows="5"  class="border-0  border-b rounded-sm w-full h-30">{{old('description')}}  
+                        <textarea name="bio"  rows="5"  class="border-0 font-light border-b rounded-sm w-full h-30">{{old('description')}}  
                         </textarea></div>
                 </label>
                 @error('bio')

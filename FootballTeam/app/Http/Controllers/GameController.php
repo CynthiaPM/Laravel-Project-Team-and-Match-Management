@@ -24,8 +24,10 @@ class GameController extends Controller
     }
 
     public function create($team){        
+        
+        $teams = Team::all();
       
-        return view('games.create',compact('team'));
+        return view('games.create',compact('team','teams'));
     }
 
     public function store(StoreGame $request){
@@ -41,8 +43,9 @@ class GameController extends Controller
     }
 
     public function edit(Game $game){
+        $teams = Team::all();
         
-        return view('games.edit',compact('game'));
+        return view('games.edit',compact('game','teams'));
     }
 
     public function update(Request $request, Game $game){

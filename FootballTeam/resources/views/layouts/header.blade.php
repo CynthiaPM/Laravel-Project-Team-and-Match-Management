@@ -1,13 +1,12 @@
-<header>
+<header class="bg-gray-200">
     <div class="container flex flex-col items-start p-6 mx-auto md:flex-row">
-        <a class="flex items-center mb-4 font-medium text-gray-900 title-font md:mb-0">
+        <a class="flex items-center mb-4 font-medium  text-gray-900 title-font md:mb-0">
             <img src="{{ asset('images/este2.png') }}" class="h-10 mr-3 fill-current" alt="Football Logo" />
             
         </a>
         <nav class="flex items-center justify-center text-base md:ml-auto">
-            <a href="#_" class="mr-5 font-medium hover:text-gray-900">Home</a>
+            <a href="{{route('teams.index')}}" class="mr-5 font-medium hover:text-gray-900">Teams
             <a href="#_" class="mr-5 font-medium hover:text-gray-900">About</a>
-            <a href="#_" class="font-medium hover:text-gray-900">Contact</a>
         </nav>
         {{-- <div class="items-center h-full pl-6 ml-6 border-l border-gray-200">
             <a href="#_" class="mr-5 font-medium hover:text-gray-900">Login</a>
