@@ -24,6 +24,6 @@ class DatabaseSeeder extends Seeder
 
         Team::factory(20)->create();
         User::factory(20)->create();
-        Game::factory(10)->create();
+        Game::factory(20)->create();
     }
 }

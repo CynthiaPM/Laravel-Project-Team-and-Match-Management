@@ -13,13 +13,14 @@ return new class extends Migration
     {
         Schema::create('games', function (Blueprint $table) {
             $table->id();
-            $table->string('other_team');
+            $table->unsignedBigInteger('other_team');
             $table->unsignedBigInteger('team_id');
             $table->string('city');
             $table->dateTime('game_date')->nullable();
             $table->enum('status',['win','lose','draw','coming soon']);
 
             $table->foreign('team_id')->references('id')->on('teams')->onDelete('cascade');
+            $table->foreign('other_team')->references('id')->on('teams')->onDelete('cascade');
 
 
             $table->timestamps();

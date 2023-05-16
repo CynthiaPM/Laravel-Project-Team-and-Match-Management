@@ -23,6 +23,10 @@ class Team extends Model
     //relation one to many
 
     public function Games(){
-        return $this->hasMany('App\Models\Game');
+        return $this->hasMany(Game::class,'team_id');
+    }
+
+    public function oponentGames(){
+        return $this->hasMany(Game::class,'other_team');
     }
 }

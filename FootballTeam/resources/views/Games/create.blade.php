@@ -20,7 +20,7 @@
                     Opponent name:                
                     <select name="other_team" class="h-10 border-4 ml-4">
                         @foreach ($teams as $teams)
-                            <option value="{{$teams->name}}">{{$teams->name}}</option>
+                            <option value="{{$teams->id}}">{{$teams->name}}</option>
                         @endforeach                    
                     </select>
                     
@@ -38,7 +38,7 @@
             <div class="block text-sm font-medium text-gray-700">
                 <label>City/Stadium
                     <div class="mt-4">
-                        <input type="text" name="city" class="border-0 font-light border-b rounded-sm w-full h-10"></div>
+                        <input type="text" name="city" class="border-0  border-b rounded-sm w-full h-10"></div>
                 </label>
             </div>
 
