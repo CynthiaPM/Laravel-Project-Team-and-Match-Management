@@ -11,7 +11,10 @@ class game extends Model
     protected $guarded = [];
     //relation one to many (inverse)
 
-    public function team(){
-        return $this->belongsTo('App\Models\Team');
+    public function localteam(){
+        return $this->belongsTo(Team::class,'team_id');
+    }
+    public function oponentGames(){
+        return $this->belongsTo(Game::class,'other_team');
     }
 }

@@ -21,7 +21,7 @@ class TeamFactory extends Factory
     {
         $existingUserIds = User::pluck('id')->toArray();
         return [
-            'name'=>$this->faker->city(),
+            'name'=>$this->faker->city(). 'team',
             'bio'=>$this->faker->sentence(),
             'user_id'=>$this->faker->randomElement($existingUserIds)
             

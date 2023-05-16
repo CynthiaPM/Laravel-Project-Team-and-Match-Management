@@ -20,7 +20,7 @@ class GameFactory extends Factory
     {
         $existingTeamIds = Team::pluck('id')->toArray();
         return [
-            'other_team'=>$this->faker->city(). ' teams',
+            'other_team'=>$this->faker->randomElement($existingTeamIds),
             'team_id'=>$this->faker->randomElement($existingTeamIds),
             'city'=>$this->faker->city(). ' stadium',
             'game_date'=>$this->faker->date(),
