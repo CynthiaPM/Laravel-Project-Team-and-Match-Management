@@ -15,10 +15,15 @@
             @csrf
             
             <div>
+                
                 <label class="block text-sm font-medium text-gray-700">
                     Opponent name:                
-                    <div class="mt-4">
-                        <input type="text" name="other_team" value="{{old('other_team')}}" class="border-0  border-b rounded-sm w-full h-10"></div>
+                    <select name="other_team" class="h-10 border-4 ml-4">
+                        @foreach ($teams as $teams)
+                            <option value="{{$teams->name}}">{{$teams->name}}</option>
+                        @endforeach                    
+                    </select>
+                    
                 </label>
                 @error('other_team')                    
                     <small>{{$message}}</small>
@@ -33,7 +38,7 @@
             <div class="block text-sm font-medium text-gray-700">
                 <label>City/Stadium
                     <div class="mt-4">
-                        <input type="text" name="city" class="border-0  border-b rounded-sm w-full h-10"></div>
+                        <input type="text" name="city" class="border-0 font-light border-b rounded-sm w-full h-10"></div>
                 </label>
             </div>
 
