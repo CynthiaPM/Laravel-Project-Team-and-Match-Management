@@ -15,7 +15,7 @@ use App\Http\Controllers\GameController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+Route::get('about',[TeamController::class,'about'])->name('teams.about');
 Route::get('/',[TeamController::class,'index']);
 
 Route::resource('teams',TeamController::class);

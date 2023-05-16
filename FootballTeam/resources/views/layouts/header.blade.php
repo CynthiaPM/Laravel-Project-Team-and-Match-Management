@@ -6,7 +6,7 @@
         </a>
         <nav class="flex items-center justify-center text-base md:ml-auto">
             <a href="{{route('teams.index')}}" class="mr-5 font-medium hover:text-gray-900">Teams
-            <a href="#_" class="mr-5 font-medium hover:text-gray-900">About</a>
+            <a href="{{route('teams.about')}}" class="mr-5 font-medium hover:text-gray-900">About</a>
         </nav>
         {{-- <div class="items-center h-full pl-6 ml-6 border-l border-gray-200">
             <a href="#_" class="mr-5 font-medium hover:text-gray-900">Login</a>
