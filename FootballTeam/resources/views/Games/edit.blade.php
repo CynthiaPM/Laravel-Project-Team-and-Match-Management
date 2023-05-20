@@ -18,7 +18,7 @@
                     Opponent name:
                     <select name="other_team" class="h-10 border-4 ml-4">
                         @foreach ($teams as $teams)
-                            <option value="{{$teams->name}}">{{$teams->name}}</option>
+                            <option value="{{$teams->id}}">{{$teams->name}}</option>
                         @endforeach                    
                     </select>                
                     </label>
@@ -57,7 +57,7 @@
             
             <div class="flex flex-col" >
                 <label class=" text-sm font-medium text-gray-700 mb-5">Date of the game
-                    <input type="date" name="game_date" value="{{$game->game_date}} class="border-4 h-10 ml-4">
+                    <input type="date" name="game_date" value="{{$game->game_date}} class="border-4 h-10 ml-4" required>
                 </label>
             </div>
 
