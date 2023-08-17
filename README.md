@@ -43,8 +43,5 @@ Follow the application's user interface to manage teams and matches. The CRUD op
 
 ## Acknowledgements
 
-This project was completed as part of my learning journey with Laravel, where I gained experience in creating web applications, database design, and version control practices.
+This project was completed as part of my learning journey with Laravel at the It academy, where I gained experience in creating web applications, database design, and version control practices.
 
-Feel free to explore the code, test the functionality, and provide feedback or contributions!
-
-Happy coding and Laravel development!
